@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .boxes{
+            width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .box{
+            height: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #box1{
+            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url(images/download\ \(7\).jpg);
+        }
+        #box2{
+            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url(images/download\ \(3\).jpg);
+            display: none;
+        }
+        #box3{
+            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url(images/download\ \(6\).jpg);
+            display: none;
+        }
+        #box4{
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url(images/lisa2\ \(1\).jpg);
+            display: none;
+        }
+        #box5{
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url(images/lisa2\ \(2\).jfif);
+            display: none;
+        }
+        #box6{
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url(images/download\ \(8\).jpg);
+            display: none;
+        }
+        #controls{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+        <div id="controls">
+            <button id="prev">&laquo; Prev</button>
+            <button id="next"> Next&raquo;</button>
+        </div>
+    </div>
+
+    <script>
+        let box= 1
+
+        function next() {
+            document.querySelector(`#box${box}`).style.display = "none"
+            box++;if(box > 6) box = 1
+            document.querySelector(`#box${box}`).style.display = "block"
+        }
+
+        function prev() {
+            document.querySelector(`#box${box}`).style.display = "none"
+            box--;if(box < 1) box = 6
+            document.querySelector(`#box${box}`).style.display = "block"
+        }
+
+        document.querySelector("#next").onclick = next
+        document.querySelector("#prev").onclick = prev
+
+        setInterval(next, 3000)
+    </script>
+</body>
+</html>

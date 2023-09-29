@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        #result{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        label{
+            display: none;
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Form</h1>
+    <div class="form">
+        <div>
+            <input type="text" id="a">
+            <label for="a">Pls enter number only</label>
+        </div><br>
+        <div>
+            <input type="text" id="b">
+            <label for="b">Pls enter number only</label>
+        </div><br>
+    </div>
+    <div id="result"></div><br>
+    <button id="add">Add</button>
+
+    <script>
+            document.querySelector("#a").onkeyup = function () {
+                let a = parseInt(document.querySelector("#a").value)
+
+                if( !isNaN(a) ) {
+                    document.querySelector("[for=a]").style.display = "none"
+                }
+            }
+
+            document.querySelector("#b").onkeyup = function () {
+                let b = parseInt(document.querySelector("#b").value)
+
+                if( !isNaN(b) ) {
+                    document.querySelector("[for=b]").style.display = "none"
+                }
+            }
+
+        document.querySelector("#add").onclick = function () {
+            let a = parseInt(document.querySelector("#a").value)
+            let b = parseInt(document.querySelector("#b").value)
+             let result = parseInt(a) + parseInt(b)
+
+            if( isNaN(a) ) {
+                document.querySelector("[for=a]")
+                .style.display = "inline"
+            } 
+            if( isNaN(b) ) {
+                document.querySelector("[for=b]")
+                .style.display = "inline"
+            }
+            //  let result = a + b
+
+            if( !isNaN(result)) {
+                document.querySelector("#result").textContent = result
+            }
+        }
+    </script>
+</body>
+</html>

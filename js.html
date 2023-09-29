@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        hello javascript
+    </div>
+    <button onClick="hello()">hello</button>
+    
+
+    <script>
+        // let hello = document.createTextNode("hello javascript")
+        // document.querySelector("#box").appendChild(hello)
+
+        // let hello = document.createElement("b")
+        // hello.textContent = "hello clone"
+        // hello.setAttribute("title","A new Element")
+        // hello.classList.add("alert", "info")
+        // hello.classList.remove("alert")
+        // let hi = hello.cloneNode(true)
+        // document.querySelector("#box").appendChild(hi)
+        function hello() {
+            document.querySelector("#box").textContent = "Hello World"
+        }
+
+        // document.querySelector("button"),addEventListener("click", e => {
+        //     document.querySelector("#box").textContent = "Hello Javascript"
+        // })
+
+        document.querySelector("button").addEventListener("click", function(e) {
+            document.querySelector("#box").textContent = "Hi , i'm a fullstack developer"
+        })
+    </script>
+</body>
+</html>
